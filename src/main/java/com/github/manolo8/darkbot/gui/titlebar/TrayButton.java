@@ -1,6 +1,5 @@
 package com.github.manolo8.darkbot.gui.titlebar;
 
-import com.github.manolo8.darkbot.core.manager.HeroManager;
 import com.github.manolo8.darkbot.gui.MainGui;
 import com.github.manolo8.darkbot.gui.utils.Popups;
 import com.github.manolo8.darkbot.gui.utils.UIUtils;
@@ -29,9 +28,6 @@ public class TrayButton extends TitleBarButton<JFrame> {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String username = HeroManager.instance.playerInfo.username;
-        if (!username.isEmpty())
-            icon.setToolTip("DarkBot - " + username);
         try {
             SystemTray.getSystemTray().add(icon);
         } catch (Exception ex) {
